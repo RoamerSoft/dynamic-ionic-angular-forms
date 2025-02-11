@@ -1,0 +1,216 @@
+{
+  "templateId": "3_SHOWCASE_FORM",
+  "name": "Formulieropties",
+  "description": "Formulier Showcasing",
+  "sections": [
+    {
+      "sectionDescription": "Ion Input",
+      "sectionTitle": {
+        "templateLabelValue": "Ion Input"
+      },
+      "items": [
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "email",
+            "type": "email",
+            "name": "email",
+            "placeholder": "Vul e-mail in...",
+            "labelPlacement": "floating",
+            "fill": "outline"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "E-mail"
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            },
+            {
+              "type": "email"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Bevat geen geldig e-mailadres"
+          }
+        },
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "password",
+            "type": "password",
+            "name": "password",
+            "placeholder": "Vul wachtwoord in...",
+            "labelPlacement": "floating",
+            "fill": "outline"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Wachtwoord"
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            },
+            {
+              "type": "minLength",
+              "value": "8"
+            },
+            {
+              "type": "pattern",
+              "value": "^[a-zA-Z0-9!@#$%^&*(),.?\":{}|<>]+$"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Wachtwoord moet minimaal 8 tekens en minimaal 1 speciaal teken bevatten"
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Ion Radio Group",
+      "sectionTitle": {
+        "templateLabelValue": "Ion Radio Group"
+      },
+      "items": [
+        {
+          "templateItemType": "RADIO_GROUP",
+          "templateItemProperties": {
+            "id": "question-1",
+            "name": "Radio group vraag"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Is de toegang veilig?"
+          },
+          "templateItemValue": {
+            "templateValueOptions": [
+              {
+                "value": "nee",
+                "label": "Nee"
+              },
+              {
+                "value": "nvt",
+                "label": "N.v.t."
+              },
+              {
+                "value": "ja",
+                "label": "Ja"
+              }
+            ],
+            "templateValueProperties": {
+              "labelPlacement": "end"
+            }
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Beantwoord de vraag alstublieft"
+          },
+          "nestedTemplateItem": {
+            "templateItemType": "TEXTAREA",
+            "templateItemProperties": {
+              "id": "comment-1",
+              "name": "Waarom is de toegang niet veilig?",
+              "fill": "outline",
+              "rows": "5",
+              "placeholder": "Vul toelichting in..."
+            },
+            "templateItemLabel": {
+              "templateLabelValue": "Waarom is de toegang niet veilig?",
+              "templateLabelProperties": {
+                "color": "danger"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Ion Textarea",
+      "sectionTitle": {
+        "templateLabelValue": "Ion Textarea"
+      },
+      "items": [
+        {
+          "templateItemType": "TEXTAREA",
+          "templateItemProperties": {
+            "id": "textarea-1",
+            "name": "textarea-1",
+            "fill": "outline",
+            "rows": "5",
+            "placeholder": "Voer commentaar in..."
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Commentaar"
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Ion Button",
+      "sectionTitle": {
+        "templateLabelValue": "Ion Button"
+      },
+      "items": [
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "submit",
+            "class": "white-text",
+            "expand": "block"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Verzend knop"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "reset",
+            "color": "warning",
+            "expand": "block"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Reset knop"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "button",
+            "color": "success",
+            "size": "small",
+            "expand": "block"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Kleine knop"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "button",
+            "color": "danger",
+            "expand": "block"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Rood"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "button",
+            "color": "success",
+            "size": "small"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Klein"
+          }
+        }
+      ]
+    }
+  ]
+}

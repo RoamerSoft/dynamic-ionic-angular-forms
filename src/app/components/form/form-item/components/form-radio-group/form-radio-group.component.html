@@ -1,0 +1,37 @@
+<div [formGroup]="form()">
+  <ion-radio-group
+    [formControlName]="attributes()['name']"
+    [appAttributes]="attributes()"
+  >
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-text color="dark"
+                    [appAttributes]="label().templateLabelProperties">
+            <h6 class="label ion-no-margin ion-margin-bottom">{{ label().templateLabelValue }}</h6></ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center">
+        <ion-col
+          *ngFor="let option of value().templateValueOptions">
+          <ion-radio
+            [value]="option.value"
+            [appAttributes]="value().templateValueProperties"
+          >
+            <ion-text
+              color="dark"
+            >
+              {{option.label}}
+            </ion-text>
+          </ion-radio>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="hr"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-radio-group>
+</div>
+

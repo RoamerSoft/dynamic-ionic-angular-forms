@@ -1,0 +1,51 @@
+<div [ngSwitch]="formItem().templateItemType">
+
+  <ng-container *ngSwitchCase="IsTemplateItemType.INPUT">
+    <app-form-input
+      [form]="form()"
+      [label]="formItem().templateItemLabel!"
+      [value]="formItem().templateItemValue!"
+      [attributes]="formItem().templateItemProperties!"/>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="IsTemplateItemType.TEXTAREA">
+    <app-form-textarea
+      [form]="form()"
+      [label]="formItem().templateItemLabel!"
+      [value]="formItem().templateItemValue!"
+      [attributes]="formItem().templateItemProperties!"/>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="IsTemplateItemType.RADIO_GROUP">
+    <app-form-radio-group
+      [form]="form()"
+      [label]="formItem().templateItemLabel!"
+      [value]="formItem().templateItemValue!"
+      [attributes]="formItem().templateItemProperties!"/>
+
+    <app-animated-container
+      [animationState]="falseStringValue(form()['controls'][formItem().templateItemProperties!['name']].value) && formItem().nestedTemplateItem">
+      <div
+        *ngIf="falseStringValue(form()['controls'][formItem().templateItemProperties!['name']].value) && formItem().nestedTemplateItem"
+        class="nested-item">
+        <app-form-item
+          *ngIf="formItem().nestedTemplateItem"
+          [form]="form()"
+          [formItem]="formItem().nestedTemplateItem!"/>
+      </div>
+    </app-animated-container>
+
+  </ng-container>
+
+  <ng-container *ngSwitchCase="IsTemplateItemType.BUTTON">
+    <app-form-button
+      [form]="form()"
+      [label]="formItem().templateItemLabel!"
+      [value]="formItem().templateItemValue!"
+      [attributes]="formItem().templateItemProperties!"/>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <h1>Unknown: {{ formItem().templateItemType }}</h1>
+  </ng-container>
+</div>

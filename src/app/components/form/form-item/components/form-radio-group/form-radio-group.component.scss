@@ -1,0 +1,28 @@
+$radioSize: 1.25rem;
+$radioBorderSize: 2px;
+$radioBorderRadius: 4px;
+$radioBorderRadius: 4px;
+
+ion-radio {
+  --border-radius: $radioBorderRadius;
+  --inner-border-radius: $radioBorderRadius;
+
+  --color: var(--ion-color-medium);
+  --color-checked: var(--ion-color-primary);
+}
+
+ion-radio.ios::part(container) {
+  width: $radioSize;
+  height: $radioSize;
+
+  border: $radioBorderSize solid var(--ion-color-medium);
+  border-radius: $radioBorderRadius;
+}
+
+.radio-checked.ios::part(container) {
+  border-color: var(--ion-color-primary);
+}
+
+.hr {
+  border-bottom: 1px solid var(--ion-color-medium);
+}
