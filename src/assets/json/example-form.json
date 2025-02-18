@@ -1,0 +1,361 @@
+{
+  "templateId": "SHOWCASE_FORM",
+  "name": "Ionic Form",
+  "description": "Dynamic JSON-Driven",
+  "sections": [
+    {
+      "sectionDescription": "Section to showcase Ionic fill: outline fields.",
+      "sectionTitle": {
+        "templateLabelValue": "Outline input fields with floating label"
+      },
+      "items": [
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "email",
+            "type": "email",
+            "name": "email",
+            "placeholder": "Enter email...",
+            "labelPlacement": "floating",
+            "fill": "outline"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Email"
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            },
+            {
+              "type": "email"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Does not contain a valid email address"
+          }
+        },
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "password",
+            "type": "password",
+            "name": "password",
+            "placeholder": "Enter password...",
+            "labelPlacement": "floating",
+            "fill": "outline"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Password"
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            },
+            {
+              "type": "minLength",
+              "value": "8"
+            },
+            {
+              "type": "pattern",
+              "value": "^[a-zA-Z0-9!@#$%^&*(),.?\":{}|<>]+$"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Password must be at least 8 characters long and contain at least 1 special character"
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Section to showcase Ionic fill: solid fields.",
+      "sectionTitle": {
+        "templateLabelValue": "Solid input field with floating label"
+      },
+      "items": [
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "age",
+            "type": "number",
+            "name": "age",
+            "placeholder": "Enter age...",
+            "labelPlacement": "floating",
+            "fill": "solid"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Age"
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            },
+            {
+              "type": "min",
+              "value": "18"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "You must be at least 18 years old"
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Section to showcase Ionic non filled input with a fixed label",
+      "sectionTitle": {
+        "templateLabelValue": "Non filled Input field with fixed label"
+      },
+      "items": [
+        {
+          "templateItemType": "INPUT",
+          "templateItemProperties": {
+            "id": "experience",
+            "type": "number",
+            "name": "experience",
+            "placeholder": "Enter experience in years...",
+            "labelPlacement": "fixed",
+            "class": "ion-padding-start"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Experience: "
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Section to showcase Ionic radio groups.",
+      "sectionTitle": {
+        "templateLabelValue": "Radio button checklist"
+      },
+      "items": [
+        {
+          "templateItemType": "RADIO_GROUP",
+          "templateItemProperties": {
+            "id": "question-1",
+            "name": "Is the access safe?"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Is the access safe?"
+          },
+          "templateItemValue": {
+            "templateValueOptions": [
+              {
+                "value": "no",
+                "label": "No"
+              },
+              {
+                "value": "n/a",
+                "label": "N/A"
+              },
+              {
+                "value": "yes",
+                "label": "Yes"
+              }
+            ],
+            "templateValueProperties": {
+              "labelPlacement": "end"
+            }
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Please answer the question"
+          },
+          "nestedTemplateItem": {
+            "templateItemType": "TEXTAREA",
+            "templateItemProperties": {
+              "id": "comment-1",
+              "name": "Why is the access not safe?",
+              "fill": "outline",
+              "rows": "5",
+              "placeholder": "Enter explanation..."
+            },
+            "templateItemLabel": {
+              "templateLabelValue": "Why is the access not safe?",
+              "templateLabelProperties": {
+                "color": "danger"
+              }
+            }
+          }
+        },
+        {
+          "templateItemType": "RADIO_GROUP",
+          "templateItemProperties": {
+            "id": "question-2",
+            "name": "Did you make pictures?",
+            "labelPlacement": "end"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Did you make pictures?"
+          },
+          "templateItemValue": {
+            "templateValueOptions": [
+              {
+                "value": "no",
+                "label": "No"
+              },
+              {
+                "value": "n/a",
+                "label": "N/A"
+              },
+              {
+                "value": "yes",
+                "label": "Yes"
+              }
+            ],
+            "templateValueProperties": {
+              "labelPlacement": "end"
+            }
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Please answer the question"
+          },
+          "nestedTemplateItem": {
+            "templateItemType": "TEXTAREA",
+            "templateItemProperties": {
+              "id": "comment-2",
+              "name": "Why did you not make pictures?",
+              "fill": "outline",
+              "rows": "5",
+              "placeholder": "Enter explanation..."
+            },
+            "templateItemLabel": {
+              "templateLabelValue": "Why did you not make pictures?",
+              "templateLabelProperties": {
+                "color": "danger"
+              }
+            }
+          }
+        },
+        {
+          "templateItemType": "RADIO_GROUP",
+          "templateItemProperties": {
+            "id": "question-3",
+            "name": "Did the client sign for confirmation?",
+            "labelPlacement": "end"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Did the client sign for confirmation?"
+          },
+          "templateItemValue": {
+            "templateValueOptions": [
+              {
+                "value": "no",
+                "label": "No"
+              },
+              {
+                "value": "n/a",
+                "label": "N/A"
+              },
+              {
+                "value": "yes",
+                "label": "Yes"
+              }
+            ],
+            "templateValueProperties": {
+              "labelPlacement": "end"
+            }
+          },
+          "templateItemValidators": [
+            {
+              "type": "required"
+            }
+          ],
+          "templateItemInvalidErrorLabel": {
+            "templateLabelValue": "Please answer the question"
+          },
+          "nestedTemplateItem": {
+            "templateItemType": "TEXTAREA",
+            "templateItemProperties": {
+              "id": "comment-3",
+              "name": "Did the client not sign for confirmation?",
+              "fill": "outline",
+              "rows": "5",
+              "placeholder": "Enter explanation..."
+            },
+            "templateItemLabel": {
+              "templateLabelValue": "Did the client not sign for confirmation?",
+              "templateLabelProperties": {
+                "color": "danger"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Section to showcase Ionic textarea.",
+      "sectionTitle": {
+        "templateLabelValue": "Textarea"
+      },
+      "items": [
+        {
+          "templateItemType": "TEXTAREA",
+          "templateItemProperties": {
+            "id": "textarea-1",
+            "name": "textarea-1",
+            "fill": "outline",
+            "rows": "5",
+            "placeholder": "Enter comment..."
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Do you have anything to add?",
+            "templateLabelProperties": {
+              "color": "primary"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sectionDescription": "Section to showcase button types",
+      "sectionTitle": {
+        "templateLabelValue": "Button types and colors"
+      },
+      "items": [
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "submit",
+            "color": "success",
+            "expand": "block"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "SUBMIT BUTTON"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "reset",
+            "color": "warning",
+            "expand": "full"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "RESET BUTTON"
+          }
+        },
+        {
+          "templateItemType": "BUTTON",
+          "templateItemProperties": {
+            "type": "reset",
+            "color": "danger",
+            "size": "small",
+            "class": "ion-float-right"
+          },
+          "templateItemLabel": {
+            "templateLabelValue": "Tiny Reset Button"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -59,6 +59,10 @@ export class FormComponent implements OnInit {
     this.formGroup = this.buildFormGroup(this.formTemplate());
   }
 
+  public resetForm(): void {
+    this.formGroup = this.buildFormGroup(this.formTemplate());
+    this.submitButtonUsed.set(false);
+  }
 
   public formSubmit(): void {
     this.submitButtonUsed.set(true);

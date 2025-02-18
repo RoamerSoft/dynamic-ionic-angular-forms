@@ -5,7 +5,7 @@ import { IsProperties } from "./is-properties";
 import { IsTemplateItemValidator } from "./is-template-item-validator";
 
 export interface IsTemplateItem {
-  templateItemType?: IsTemplateItemType;
+  templateItemType: IsTemplateItemType;
   templateItemLabel?: IsTemplateLabel;
   templateItemValue?: IsTemplateValue;
   templateItemProperties?: IsProperties;

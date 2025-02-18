@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  formLocation: "assets/json/example-form.json"
 };

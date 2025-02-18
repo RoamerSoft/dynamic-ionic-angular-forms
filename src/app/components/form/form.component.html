@@ -3,7 +3,7 @@
   <ion-card-subtitle>{{ formTemplate().description }}</ion-card-subtitle>
 </ion-card-header>
 
-<form [formGroup]="formGroup" (ngSubmit)="formSubmit()">
+<form [formGroup]="formGroup" (ngSubmit)="formSubmit()" (reset)="resetForm()">
   <ion-list *ngFor="let formSection of formTemplate().sections; index as index">
     <!-- start: Form Section Header -->
     <div class="ion-padding-top ion-padding-bottom">

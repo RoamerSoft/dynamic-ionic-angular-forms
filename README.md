@@ -1,2 +1,34 @@
-# dynamic-ionic-angular-forms
-Ionic Angular app template with dynamic form generation based on json.
+- Form
+  - templateId: string
+  - name: string
+  - description?: string
+  - sections?: IsTemplateSection[]
+    - sectionDescription: string
+    - sectionTitle: IsTemplateLabel
+      - templateLabelValue: string
+      - templateLabelProperties: IsProperties
+        -  &nbsp;[key: string]: string
+      - items?: IsTemplateItem[] 
+        - templateItemType: IsTemplateItemType 
+          - "ITEM" | "BUTTON" | "INPUT" | "RADIO_GROUP" | "TEXTAREA"
+        - templateItemLabel?: IsTemplateLabel
+          - templateLabelValue?: string
+          - templateLabelProperties?: IsProperties
+            - &nbsp;[key: string]: string
+        - templateItemValue?: IsTemplateValue
+          - templateValueValue?: string
+          - templateValueOptions? IsTemplateValueOption[]
+            - value?: string
+            - label?: string
+          - templateValueProperties?: IsProperties
+            - &nbsp;[key: string]: string
+        - templateItemProperties?: IsProperties
+          - &nbsp;[key: string]: string
+        - templateItemValidators?: IsTemplateItemValidator[]
+          - type: string
+          - value?: string
+        - templateItemInvalidErrorLabel? IsTemplateLabel
+          - templateLabelValue?: string
+          - templateLabelProperties?: IsProperties
+            - &nbsp;[key: string]: string
+        - nestedTemplateItem: IsTemplateItem
