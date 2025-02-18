@@ -5,7 +5,7 @@ import { take } from "rxjs";
 import { FormService } from "../../services/form.service";
 import { FormComponent } from "../../components/form/form.component";
 import { IsFormData } from "../../models/form/is-form-data";
-import { IonCard, IonCardContent, IonCardHeader, IonContent } from "@ionic/angular/standalone";
+import { IonCard, IonCardContent, IonContent } from "@ionic/angular/standalone";
 import { ResponsiveContainerComponent } from "../../components/responsive-container/responsive-container.component";
 
 @Component({
@@ -42,7 +42,15 @@ export class FormsPage implements OnInit {
       formData: this.removeEmptyFields(formData.formData)
     };
 
-    console.log("Form submitted", cleanedFormData);
+    // Convert data to JSON string
+    const jsonString: string = JSON.stringify(cleanedFormData, null, 2);
+
+    // Create a data URL
+    const blob = new Blob([jsonString], {type: "application/json"});
+    const url: string = URL.createObjectURL(blob);
+
+    // Open form details in a new tab
+    window.open(url, "_blank");
   }
 
   private removeEmptyFields(formData: FormData): FormData {
