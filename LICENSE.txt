@@ -42,4 +42,4 @@ Upon termination, you must cease all use of the Software.
 
 Each application requires a separate license. Contact the original author for additional licensing options.
 
-For inquiries or additional licenses, please contact [your email or website].Ï
+For inquiries or additional licenses, please contact https://roamersoft.com.
