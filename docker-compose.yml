@@ -1,0 +1,24 @@
+version: '3'
+services:
+  dynamic-forms-ionic-angular:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: dynamic-forms-ionic-angular
+    container_name: dynamic-forms-ionic-angular
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ionicforms.rule=Host(`ionicforms.roamersoft.com`)"
+      - "traefik.http.routers.ionicforms.entrypoints=web, websecure"
+      - "traefik.http.routers.ionicforms.tls.certresolver=production"
+      - "traefik.http.services.ionicforms.loadbalancer.server.port=4200"
+    restart: always
+    networks:
+      - traefik
+    ports:
+      - 4200:4200
+
+networks:
+  traefik:
+    external: true
+
