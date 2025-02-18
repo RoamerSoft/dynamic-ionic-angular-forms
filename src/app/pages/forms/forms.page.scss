@@ -1,0 +1,13 @@
+.form-card {
+  padding: 2rem 1.25rem 0 1.25rem;
+  background: var(--ion-color-dark-contrast);
+  margin-bottom: calc(1rem + (env(safe-area-inset-bottom) * 2.5));
+}
+
+.muted {
+  color: var(--ion-color-medium);
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-align: center;
+}
+

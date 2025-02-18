@@ -1,0 +1,8 @@
+<div [formGroup]="form()">
+  <ion-label [appAttributes]="label().templateLabelProperties">{{label().templateLabelValue}}</ion-label>
+  <ion-textarea
+    mode="md"
+    [formControlName]="attributes()['name']"
+    [appAttributes]="attributes()"
+  />
+</div>

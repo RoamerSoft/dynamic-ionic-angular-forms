@@ -1,0 +1,52 @@
+<ion-card-header class="ion-no-padding">
+  <ion-card-title>{{ formTemplate().name }}</ion-card-title>
+  <ion-card-subtitle>{{ formTemplate().description }}</ion-card-subtitle>
+</ion-card-header>
+
+<form [formGroup]="formGroup" (ngSubmit)="formSubmit()" (reset)="resetForm()">
+  <ion-list *ngFor="let formSection of formTemplate().sections; index as index">
+    <!-- start: Form Section Header -->
+    <div class="ion-padding-top ion-padding-bottom">
+      <h2 *ngIf="formSection.sectionTitle">
+        <ion-text
+          color="dark"
+          [appAttributes]="formSection.sectionTitle.templateLabelProperties">
+          <div [innerHTML]="formSection.sectionTitle.templateLabelValue"></div>
+        </ion-text>
+      </h2>
+    </div>
+
+    <!-- end: Form Section Header -->
+
+    <!-- start: Form Section Items -->
+    <div *ngFor="let formItem of formSection.items"
+         class="ion-margin-bottom">
+      <app-form-item
+        [form]="formGroup"
+        [formItem]="formItem"
+      ></app-form-item>
+
+      <app-animated-container
+        [animationState]="
+        formItem.templateItemType !== IsTemplateItemType.ITEM &&
+        formItem.templateItemType !== IsTemplateItemType.BUTTON &&
+        formGroup.controls[formItem.templateItemProperties!['name']].invalid &&
+        submitButtonUsed()">
+        <div
+          *ngIf="formItem.templateItemType !== IsTemplateItemType.BUTTON &&
+        formGroup.controls[formItem.templateItemProperties!['name']].invalid &&
+        submitButtonUsed()"
+          class="error-text"
+        >
+          <ion-text
+            color="danger"
+            [appAttributes]="formItem.templateItemInvalidErrorLabel?.templateLabelProperties">
+            {{ formItem.templateItemInvalidErrorLabel?.templateLabelValue }}
+          </ion-text>
+        </div>
+      </app-animated-container>
+
+    </div>
+    <!-- end: Form Section Items -->
+  </ion-list>
+</form>

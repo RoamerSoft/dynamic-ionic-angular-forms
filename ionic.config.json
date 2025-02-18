@@ -1,0 +1,7 @@
+{
+  "name": "Dynamic Ionic Angular Forms",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
