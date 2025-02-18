@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common"
 import { IsFormTemplate } from "../../models/templates/is-form-template";
 import { take } from "rxjs";
@@ -7,6 +7,7 @@ import { FormComponent } from "../../components/form/form.component";
 import { IsFormData } from "../../models/form/is-form-data";
 import { IonCard, IonCardContent, IonContent } from "@ionic/angular/standalone";
 import { ResponsiveContainerComponent } from "../../components/responsive-container/responsive-container.component";
+import { AppInformationService } from "../../services/app-information.service";
 
 @Component({
   selector: "app-forms",
@@ -25,8 +26,8 @@ import { ResponsiveContainerComponent } from "../../components/responsive-contai
 export class FormsPage implements OnInit {
   public formTemplate: IsFormTemplate | undefined;
 
-  constructor(private formService: FormService) {
-  }
+  private readonly formService: FormService = inject(FormService);
+  public readonly appInfoService: AppInformationService = inject(AppInformationService);
 
   ngOnInit() {
     this.formService.getFormTemplate().pipe(take(1)).subscribe((formTemplate: IsFormTemplate) => {

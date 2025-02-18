@@ -1,9 +1,9 @@
 {
   "name": "dynamic-ionic-angular-forms",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "RoamerSoft",
   "homepage": "https://roamersoft.com/",
-  "description": "Ionic Angular app template with dynamic form generation based on json.\n\nÏ",
+  "description": "Ionic Angular app template with dynamic form generation based on json.",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
